@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Instructor {
+    -- Atributs --
+    - nom: String
+    - anysExp: Int
+    - cotxe: Cotxe
+    -- Mètodes --
+    + constructor(String, Int, Cotxe)
+    + assignarPractica(Alumne, Practica): Boolean
+    + consultarNombreTotalPractiques(): Int
+}
+
+class Alumne {
+    -- Atributs --
+    - nom: String
+    - edat: Int
+    - teorica: Boolean
+    - quantPractiques: Int
+    -- Mètodes --
+    + constructor(String, Int)
+    + incrementarPractiques()
+    + getQuantPractiques(): Int
+    + aprovarTeorica()
+}
+
+class Practica{
+    -- Atributs --
+    - alumne: Alumne
+    - instructor: Instructor
+    - data: Date
+    - durada: Int
+    -- Mètodes --
+    + constructor(Alumne, Instructor, Data)
+    + setDurada(Int)
+}
+
+class Cotxe{
+    -- Atributs --
+    - marca: String
+    - model: String
+    - cv: Int
+    - cc: Float
+    -- Mètodes --
+    + constructor(String, String, Int, Float)
+}
+
+Practica "n" o-- "1" Instructor: supervisa
+Practica "n" o-- "1" Alumne: reserva
+Instructor "1" *-- "1" Cotxe: té
+
+@enduml
