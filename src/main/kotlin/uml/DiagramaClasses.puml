@@ -9,7 +9,7 @@ class Instructor {
     -- Mètodes --
     + constructor(String, Int, Cotxe)
     + assignarPractica(Alumne, Practica): Boolean
-    + consultarNombreTotalPractiques(): Int
+    + consultarNombreTotalPractiques(List<Practica>): Int
 }
 
 class Alumne {
@@ -23,6 +23,7 @@ class Alumne {
     + incrementarPractiques()
     + getQuantPractiques(): Int
     + aprovarTeorica()
+    + getTeorica(): Boolean
 }
 
 class Practica{
@@ -34,6 +35,7 @@ class Practica{
     -- Mètodes --
     + constructor(Alumne, Instructor, Data)
     + setDurada(Int)
+    + setAlumne(Alumne)
 }
 
 class Cotxe{
@@ -42,6 +44,7 @@ class Cotxe{
     - model: String
     - cv: Int
     - cc: Float
+    - kms: Int
     -- Mètodes --
     + constructor(String, String, Int, Float)
 }

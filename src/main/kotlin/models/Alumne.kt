@@ -13,19 +13,19 @@ class Alumne {
         this.quantPractiques = 0
     }
 
-    fun incrementarPractiques(){
+    public fun incrementarPractiques(){
         this.quantPractiques++
     }
 
-    fun getQuantPractiques(): Int{
+    public fun getQuantPractiques(): Int{
         return this.quantPractiques
     }
 
-    fun aprovarTeorica(){
+    public fun aprovarTeorica(){
         this.teorica = true
     }
 
-    fun getTeorica(): Boolean{
+    public fun getTeorica(): Boolean{
         return this.teorica
     }
 }
